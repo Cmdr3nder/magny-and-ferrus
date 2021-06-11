@@ -11,11 +11,14 @@ height = 200.0
 script = ExtResource( 2 )
 
 [node name="Brother" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1180, 493 )
-connection_force = 200
+position = Vector2( 327, 229 )
 
 [node name="Brother2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 224, 166 )
+position = Vector2( 1068, 457 )
+up_btn = "p2_up"
+down_btn = "p2_down"
+left_btn = "p2_left"
+right_btn = "p2_right"
 
 [node name="Wall" type="StaticBody2D" parent="."]
 position = Vector2( 572, 276 )
@@ -28,7 +31,7 @@ shape = SubResource( 1 )
 [node name="Connector" type="Node2D" parent="."]
 script = ExtResource( 3 )
 
-[connection signal="broadcast_pos" from="Brother" to="Brother2" method="listen_other_pos"]
 [connection signal="broadcast_pos" from="Brother" to="Connector" method="_update_one_pos"]
+[connection signal="broadcast_pos" from="Brother" to="Brother2" method="listen_other_pos"]
 [connection signal="broadcast_pos" from="Brother2" to="Connector" method="_update_two_pos"]
 [connection signal="broadcast_pos" from="Brother2" to="Brother" method="listen_other_pos"]
