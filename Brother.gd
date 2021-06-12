@@ -3,8 +3,8 @@ extends KinematicBody2D
 signal broadcast_pos(pos)
 
 var other_brother_pos = Vector2.ZERO
-export(int) var connection_force = 1
-export(int) var speed = 200
+export(float) var connection_force = 0.7
+export(float) var speed = 125
 export(String) var up_btn = "p1_up"
 export(String) var down_btn = "p1_down"
 export(String) var left_btn = "p1_left"
