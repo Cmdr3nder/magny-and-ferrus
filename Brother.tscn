@@ -211,10 +211,11 @@ start_node = "Idle"
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.707901, 6.37115 )
+position = Vector2( -0.471939, 2.12372 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.235947, -2.83163 )
 texture = ExtResource( 2 )
 hframes = 12
 frame = 9
