@@ -26,4 +26,4 @@ func _update_two_pos(pos):
 	update()
 
 func _draw():
-	draw_line(brother_one_pos, brother_two_pos, Color.aquamarine, 5.0, false)
+	draw_line(brother_one_pos, brother_two_pos, Color.rebeccapurple, 2.0, false)
