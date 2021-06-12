@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Levels.gd" type="Script" id=1]
-[ext_resource path="res://Main.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Main.tscn" type="PackedScene" id=2]
 [ext_resource path="res://LevelButton.gd" type="Script" id=3]
 
 [node name="Levels" type="Node2D"]

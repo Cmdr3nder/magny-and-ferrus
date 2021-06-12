@@ -25,4 +25,10 @@ func _start_level(level):
 	$QuitButton.hide()
 	$VBoxContainer.hide()
 	current_level = level.instance()
+	current_level.connect("done", self, "_next_level")
 	self.add_child(current_level)
+
+
+func _next_level(level):
+	current_level.queue_free()
+	_start_level(level)

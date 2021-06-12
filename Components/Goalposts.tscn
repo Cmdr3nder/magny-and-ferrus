@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Components/Goalpost.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Components/Goalposts.gd" type="Script" id=2]
+
+[node name="Goalposts" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BlueGoalpost" parent="." instance=ExtResource( 1 )]
+position = Vector2( 84.4768, 42.5924 )
+
+[node name="RedGoalpost" parent="." instance=ExtResource( 1 )]
+position = Vector2( 83.7689, 10.2646 )
