@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://green-brother-temp.png" type="Texture" id=1]
+[ext_resource path="res://Magny_final..png" type="Texture" id=1]
 [ext_resource path="res://Connector.gd" type="Script" id=2]
 [ext_resource path="res://Brother.tscn" type="PackedScene" id=3]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [node name="Brothers" type="Node2D"]
 
@@ -22,8 +24,11 @@ right_btn = "p2_right"
 [node name="Sprite" parent="Brother2" index="1"]
 texture = ExtResource( 1 )
 
-[connection signal="broadcast_pos" from="Brother" to="Connector" method="_update_one_pos"]
+[node name="AnimationTree" parent="Brother2" index="3"]
+parameters/playback = SubResource( 1 )
+
 [connection signal="broadcast_pos" from="Brother" to="Brother2" method="listen_other_pos"]
+[connection signal="broadcast_pos" from="Brother" to="Connector" method="_update_one_pos"]
 [connection signal="broadcast_pos" from="Brother2" to="Connector" method="_update_two_pos"]
 [connection signal="broadcast_pos" from="Brother2" to="Brother" method="listen_other_pos"]
 
