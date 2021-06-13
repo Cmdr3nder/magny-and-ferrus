@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="joined-together-gmtk-2021"
+config/name="Magny and Ferrus' Big Hair Day"
 run/main_scene="res://Host.tscn"
 config/icon="res://hair-logo.png"
 
