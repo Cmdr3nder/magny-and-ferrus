@@ -1,20 +1,23 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Controls.gd" type="Script" id=1]
 [ext_resource path="res://Levels.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Controls_BGFIN.png" type="Texture" id=3]
+[ext_resource path="res://Got_It_BTN.png" type="Texture" id=4]
 
 [node name="Controls" type="Node2D"]
 script = ExtResource( 1 )
 next_level = ExtResource( 2 )
 
-[node name="Continue" type="Button" parent="."]
-margin_left = 392.459
-margin_top = 242.304
-margin_right = 473.459
-margin_bottom = 262.304
-text = "Continue >"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Controls_BGFIN" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Continue" type="TextureButton" parent="."]
+margin_left = 389.155
+margin_top = 230.506
+margin_right = 474.155
+margin_bottom = 261.506
+texture_normal = ExtResource( 4 )
 
 [connection signal="pressed" from="Continue" to="." method="_on_Continue_pressed"]

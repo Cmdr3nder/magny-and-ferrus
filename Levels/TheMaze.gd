@@ -9,4 +9,4 @@ func _on_Collectibles_all_collected():
 
 
 func _on_Goalposts_goal():
-	emit_signal("done", load("res://Levels/TheMaze.tscn"))
+	emit_signal("done", null)

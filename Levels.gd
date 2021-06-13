@@ -8,13 +8,17 @@ func _ready():
 		child.connect("start_level", self, "_start_level")
 
 
+func cancel():
+	$QuitButton.show()
+	$VBoxContainer.show()
+	if current_level != null:
+		current_level.queue_free()
+		current_level = null
+
+
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		$QuitButton.show()
-		$VBoxContainer.show()
-		if current_level != null:
-			current_level.queue_free()
-			current_level = null
+		cancel()
 
 
 func _on_QuitButton_pressed():
@@ -30,5 +34,8 @@ func _start_level(level):
 
 
 func _next_level(level):
-	current_level.queue_free()
-	_start_level(level)
+	if level != null:
+		current_level.queue_free()
+		_start_level(level)
+	else:
+		cancel()

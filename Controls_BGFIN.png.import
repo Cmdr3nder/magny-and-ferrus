@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/joined-together-logo.jpg-8bae1b4f10b3d792b1e7442d972271fd.stex"
+path="res://.import/Controls_BGFIN.png-0e7f5669416b9ceb53f334b4a592ce90.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://joined-together-logo.jpg"
-dest_files=[ "res://.import/joined-together-logo.jpg-8bae1b4f10b3d792b1e7442d972271fd.stex" ]
+source_file="res://Controls_BGFIN.png"
+dest_files=[ "res://.import/Controls_BGFIN.png-0e7f5669416b9ceb53f334b4a592ce90.stex" ]
 
 [params]
 
