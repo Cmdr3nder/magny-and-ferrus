@@ -3,7 +3,7 @@ extends YSort
 
 signal all_collected
 
-onready var original_count = len(self.get_children())
+onready var original_count = len(self.get_children()) - 1
 onready var collected_count = 0
 
 
@@ -13,6 +13,7 @@ func _ready():
 
 
 func _child_collected():
+	$CollectedSound.play()
 	collected_count += 1
 	if collected_count >= original_count:
 		emit_signal("all_collected")
