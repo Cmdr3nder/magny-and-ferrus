@@ -6,6 +6,7 @@ var current_level = null
 func _ready():
 	for child in $VBoxContainer.get_children():
 		child.connect("start_level", self, "_start_level")
+	_start_level(load("res://Levels/Main.tscn"))
 
 
 func cancel():

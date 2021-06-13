@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Credits.gd" type="Script" id=1]
 [ext_resource path="res://Credits.png" type="Texture" id=2]
 [ext_resource path="res://Got_It_BTN.png" type="Texture" id=3]
+[ext_resource path="res://Got_It_BTN_Pixely.png" type="Texture" id=4]
 
 [node name="Credits" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,7 +17,8 @@ margin_left = 345.865
 margin_top = 219.898
 margin_right = 430.865
 margin_bottom = 250.898
-texture_normal = ExtResource( 3 )
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

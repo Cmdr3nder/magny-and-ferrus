@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Credits_BTN.png" type="Texture" id=1]
 [ext_resource path="res://Quit_BTN.png" type="Texture" id=2]
 [ext_resource path="res://Front_Splash_NO_guide.png" type="Texture" id=3]
 [ext_resource path="res://Start_BTN.png" type="Texture" id=4]
 [ext_resource path="res://MainMenu.gd" type="Script" id=5]
+[ext_resource path="res://Start_BTN_Pixely.png" type="Texture" id=6]
+[ext_resource path="res://Quit_BTN_Pixely.png" type="Texture" id=7]
+[ext_resource path="res://Credits_BTN_PIxely.png" type="Texture" id=8]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 5 )
@@ -18,7 +21,8 @@ margin_left = 244.458
 margin_top = 207.974
 margin_right = 329.458
 margin_bottom = 238.974
-texture_normal = ExtResource( 2 )
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -28,7 +32,8 @@ margin_left = 151.02
 margin_top = 208.124
 margin_right = 236.02
 margin_bottom = 239.124
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -38,7 +43,8 @@ margin_left = 195.854
 margin_top = 239.744
 margin_right = 280.854
 margin_bottom = 269.744
-texture_normal = ExtResource( 1 )
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

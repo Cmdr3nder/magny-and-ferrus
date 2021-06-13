@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Controls.gd" type="Script" id=1]
 [ext_resource path="res://Levels.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Controls_BGFIN.png" type="Texture" id=3]
 [ext_resource path="res://Got_It_BTN.png" type="Texture" id=4]
+[ext_resource path="res://Got_It_BTN_Pixely.png" type="Texture" id=5]
 
 [node name="Controls" type="Node2D"]
 script = ExtResource( 1 )
@@ -18,6 +19,10 @@ margin_left = 389.155
 margin_top = 230.506
 margin_right = 474.155
 margin_bottom = 261.506
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="Continue" to="." method="_on_Continue_pressed"]

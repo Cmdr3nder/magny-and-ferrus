@@ -5,7 +5,7 @@
 [ext_resource path="res://Components/Collectible.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Components/Collectibles.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Components/Goalposts.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Components/Wall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Components/WallMap.tres" type="TileSet" id=6]
 [ext_resource path="res://Gamemat_BG.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -21,6 +21,15 @@ script = ExtResource( 2 )
 position = Vector2( 0.33374, 0 )
 texture = ExtResource( 7 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 327684, 0, 262148, 327685, 0, 327681, 327686, 0, 327681, 327687, 0, 327682, 393220, 0, 262147, 458756, 0, 262147, 458759, 0, 196611, 524292, 0, 327684, 524293, 0, 327681, 524294, 0, 327681, 524295, 0, 327685, 1572868, 0, 262148, 1572869, 0, 327681, 1572870, 0, 327681, 1572871, 0, 262149, 1638404, 0, 262147, 1638407, 0, 327683, 1703940, 0, 262147, 1769476, 0, 327684, 1769477, 0, 327681, 1769478, 0, 327681, 1769479, 0, 327682 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -41,28 +50,6 @@ shape = SubResource( 1 )
 position = Vector2( -2.25488, 187.313 )
 rotation = 1.5708
 shape = SubResource( 1 )
-
-[node name="Wallz" type="Node2D" parent="."]
-
-[node name="Wall" parent="Wallz" instance=ExtResource( 6 )]
-position = Vector2( 49.7229, 42.7149 )
-
-[node name="Wall2" parent="Wallz" instance=ExtResource( 6 )]
-position = Vector2( 49.7229, 66.4084 )
-
-[node name="Wall3" parent="Wallz" instance=ExtResource( 6 )]
-position = Vector2( 37.0419, 55.3959 )
-rotation = -1.5708
-
-[node name="Wall4" parent="Wallz" instance=ExtResource( 6 )]
-position = Vector2( 48.7217, 191.884 )
-
-[node name="Wall5" parent="Wallz" instance=ExtResource( 6 )]
-position = Vector2( 48.7217, 215.577 )
-
-[node name="Wall6" parent="Wallz" instance=ExtResource( 6 )]
-position = Vector2( 36.0407, 203.563 )
-rotation = -1.5708
 
 [node name="Goalposts" parent="." instance=ExtResource( 5 )]
 
