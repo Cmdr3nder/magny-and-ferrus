@@ -4,8 +4,9 @@ extends Node2D
 signal goal
 
 
-onready var child_count = len(get_children())
+onready var child_count = len(get_children()) - 3
 onready var occupied_count = 0
+onready var transport_played = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,8 +16,7 @@ func _ready():
 
 
 func _enable():
-	for child in get_children():
-		child._enable()
+	$UnlockingTimer.start()
 
 
 func child_occupied(status):
@@ -26,4 +26,17 @@ func child_occupied(status):
 		occupied_count -= 1
 		
 	if occupied_count >= child_count:
-		emit_signal("goal")
+		if !transport_played:
+			transport_played = true
+			$Transport.play()
+
+
+func _on_UnlockingTimer_timeout():
+	$Unlocking.play()
+	for child in get_children():
+		if child.has_method("_enable"):
+			child._enable()
+
+
+func _on_Transport_finished():
+	emit_signal("goal")

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Components/Goalpost.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Components/Goalposts.gd" type="Script" id=2]
+[ext_resource path="res://unlocked.2.wav" type="AudioStream" id=3]
+[ext_resource path="res://transport.wav" type="AudioStream" id=4]
 
 [node name="Goalposts" type="Node2D"]
 script = ExtResource( 2 )
@@ -11,3 +13,16 @@ position = Vector2( 84.4768, 42.5924 )
 
 [node name="RedGoalpost" parent="." instance=ExtResource( 1 )]
 position = Vector2( 83.7689, 10.2646 )
+
+[node name="Unlocking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="UnlockingTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="Transport" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[connection signal="timeout" from="UnlockingTimer" to="." method="_on_UnlockingTimer_timeout"]
+[connection signal="finished" from="Transport" to="." method="_on_Transport_finished"]
