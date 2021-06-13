@@ -11,7 +11,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 301.792, 10 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=3]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=2]
 
 [node name="Main" type="Node2D"]
 position = Vector2( -1, 0 )
@@ -78,7 +78,7 @@ position = Vector2( 48.6652, 53.6708 )
 position = Vector2( 47.2738, 202.115 )
 
 [node name="AnimationTree" parent="Entities/Brothers/Brother2" index="3"]
-parameters/playback = SubResource( 3 )
+parameters/playback = SubResource( 2 )
 
 [connection signal="goal" from="Goalposts" to="." method="_on_Goalposts_goal"]
 [connection signal="all_collected" from="Entities/Collectibles" to="." method="_on_Collectibles_all_collected"]

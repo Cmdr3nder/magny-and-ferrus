@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 
 signal start_level(PackedScene)

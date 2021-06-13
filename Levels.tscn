@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Levels.gd" type="Script" id=1]
 [ext_resource path="res://Levels/Main.tscn" type="PackedScene" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://Levels/TheMaze.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Credits_BG.png" type="Texture" id=7]
 [ext_resource path="res://Levels/Corners.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level_label_buttons1.png" type="Texture" id=9]
+[ext_resource path="res://Level_label_buttons2.png" type="Texture" id=10]
+[ext_resource path="res://Level_label_buttons3.png" type="Texture" id=11]
 
 [node name="Levels" type="Node2D"]
 script = ExtResource( 1 )
@@ -27,36 +30,40 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 79.0412
-margin_top = 43.1099
-margin_right = 411.041
-margin_bottom = 193.11
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="VBoxContainer" type="Node2D" parent="."]
+position = Vector2( 108, 53.5 )
 
-[node name="Tutorial" type="Button" parent="VBoxContainer"]
-margin_right = 331.0
-margin_bottom = 20.0
-text = "Tutorial"
+[node name="Tutorial" type="TextureButton" parent="VBoxContainer"]
+margin_left = 24.0
+margin_top = 7.5
+margin_right = 224.0
+margin_bottom = 37.5
+texture_normal = ExtResource( 9 )
 script = ExtResource( 3 )
 level = ExtResource( 2 )
 
-[node name="TheMaze" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
-margin_right = 331.0
-margin_bottom = 44.0
-text = "The Maze"
+[node name="TheMaze" type="TextureButton" parent="VBoxContainer"]
+margin_left = 24.5
+margin_top = 44.5
+margin_right = 224.5
+margin_bottom = 74.5
+texture_normal = ExtResource( 10 )
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 level = ExtResource( 6 )
 
-[node name="Corners" type="Button" parent="VBoxContainer"]
-margin_top = 48.0
-margin_right = 331.0
-margin_bottom = 68.0
-text = "Corners"
+[node name="Corners" type="TextureButton" parent="VBoxContainer"]
+margin_left = 25.0
+margin_top = 83.5
+margin_right = 225.0
+margin_bottom = 113.5
+texture_normal = ExtResource( 11 )
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 level = ExtResource( 8 )
 
 [connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]

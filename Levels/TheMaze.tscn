@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Components/Goalposts.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Gamemat_BG.png" type="Texture" id=2]
@@ -10,6 +10,8 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 301.792, 10 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=2]
 
 [node name="TheMaze" type="Node2D"]
 script = ExtResource( 6 )
@@ -80,6 +82,9 @@ position = Vector2( 240, 67 )
 [node name="Brother2" parent="Entities/Brothers" index="2"]
 position = Vector2( 240, 213.795 )
 
+[node name="AnimationTree" parent="Entities/Brothers/Brother2" index="3"]
+parameters/playback = SubResource( 2 )
+
 [node name="Collectibles" parent="Entities" instance=ExtResource( 5 )]
 
 [node name="Collectible" parent="Entities/Collectibles" instance=ExtResource( 4 )]
@@ -99,3 +104,4 @@ position = Vector2( 249.615, 114.796 )
 
 [editable path="Goalposts"]
 [editable path="Entities/Brothers"]
+[editable path="Entities/Brothers/Brother2"]
