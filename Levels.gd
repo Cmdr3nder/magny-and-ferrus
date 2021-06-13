@@ -1,6 +1,7 @@
 extends Node2D
 
 
+var game_completed = false
 var current_level = null
 
 func _ready():
@@ -35,8 +36,12 @@ func _start_level(level):
 
 
 func _next_level(level):
-	if level != null:
+	if game_completed:
+		cancel()
+	elif level != null:
 		current_level.queue_free()
 		_start_level(level)
 	else:
+		game_completed = true
+		$GameComplete.play()
 		cancel()

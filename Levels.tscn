@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Levels.gd" type="Script" id=1]
 [ext_resource path="res://Levels/Main.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Level_label_buttons3.png" type="Texture" id=11]
 [ext_resource path="res://Level_label_buttons4.png" type="Texture" id=12]
 [ext_resource path="res://Levels/Hair.tscn" type="PackedScene" id=13]
+[ext_resource path="res://game-complete.ogg" type="AudioStream" id=14]
 
 [node name="Levels" type="Node2D"]
 script = ExtResource( 1 )
@@ -79,5 +80,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 level = ExtResource( 13 )
+
+[node name="GameComplete" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
 
 [connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
